@@ -1,4 +1,4 @@
-function plotQuadrotor(x,y,z,psi,theta,phi,w_rot,t)
+function plotQuadrotor(x,y,z,psi,theta,phi,w_rot,t,off)
 
 % Quadrotor frame
 
@@ -29,7 +29,11 @@ prop_half_length = 0.2;
 prop1 = [-prop_half_length,prop_half_length;0,0;0,0];
 prop2 = [0,0;-prop_half_length,prop_half_length;0,0];
 
-theta_rot = w_rot*t;
+if off
+    theta_rot = 0;
+else
+    theta_rot = w_rot*t; 
+end
 
 prop1_frontq = rotProp(prop1,theta_rot) + [hal,hal;0,0;sup_height,sup_height];
 prop2_frontq = rotProp(prop2,theta_rot) + [hal,hal;0,0;sup_height,sup_height];
