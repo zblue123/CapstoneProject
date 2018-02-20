@@ -1,4 +1,4 @@
-function plotSim(t,x_sim,y_sim,z_sim,phi_sim,theta_sim,psi_sim)
+function plotSim(t,x_sim,y_sim,z_sim,phi_sim,theta_sim,psi_sim, target_x, target_y)
 
 dt = t(2) - t(1);
 
@@ -11,14 +11,15 @@ z_min = min(z_sim);
 z_max = max(z_sim);
 
 
-for i = 1:length(t)
+for i = 1:5:length(t)
     plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),phi_sim(i),theta_sim(i),psi_sim(i),5,t(i));
+    plotTarget(target_x(i), target_y(i), pi/4); 
     grid on;
     mytitle = sprintf('Time = %0.2f', t(i));
     title(mytitle);
     
-    lowerlim = max(1,i-200);
-    upperlim = min(length(t),i+200);
+    lowerlim = min(1,i+200);
+    upperlim = max(length(t),i-200);
     
     x_min = min(x_sim(lowerlim:upperlim));
     y_min = min(y_sim(lowerlim:upperlim));
