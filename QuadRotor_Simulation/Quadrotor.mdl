@@ -1,12 +1,12 @@
 Model {
   Name			  "Quadrotor"
   Version		  8.9
-  SavedCharacterEncoding  "ISO-8859-1"
+  SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.713"
+    ComputedModelVersion    "1.716"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -22,7 +22,7 @@ Model {
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
   DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 0 0"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
   SLCCPlugin		  "on"
   slprops.hdlmdlprops {
     $PropName		    "HDLParams"
@@ -44,7 +44,7 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  LastSavedArchitecture	  "maci64"
+  LastSavedArchitecture	  "win64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    2
@@ -76,11 +76,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1331.0, 630.0]
-	ZoomFactor		[0.5583905560000938]
-	Offset			[-13.564244771680706, -21.621288612816556]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"635"
+	Extents			[1648.0, 793.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -93,18 +93,18 @@ Model {
 	UserData		""
 	Floating		[0]
 	DockPosition		"Right"
-	Width			[640]
-	Height			[480]
+	Width			[512]
+	Height			[384]
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAByAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAB4AP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAVZAAACsQAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAANAD///8AAAadAAADXgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAACE/////wAAAAAAAAAA/////wEAAAD2/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAF6/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAPe/////wAAAAAAAAAA/"
-      "////wEAAAQN/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wEAAACR/////wAAAAAAAAAA/////wEAAAEE/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAGV/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAPG/////wAAAAAAAAAA/"
+      "////wEAAAP+/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
@@ -112,11 +112,11 @@ Model {
   Creator		  "hts"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "SydneyKatz"
+  LastModifiedBy	  "zblue"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 17 14:31:59 2018"
-  RTWModifiedTimeStamp	  440778661
-  ModelVersionFormat	  "1.%<AutoIncrement:713>"
+  LastModifiedDate	  "Thu Feb 22 15:38:24 2018"
+  RTWModifiedTimeStamp	  441214701
+  ModelVersionFormat	  "1.%<AutoIncrement:716>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1248,7 +1248,7 @@ Model {
   System {
     Name		    "Quadrotor"
     Location		    [51, 38, 1420, 844]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1360,7 +1360,7 @@ Model {
       System {
 	Name			"Discrete trajectory generator"
 	Location		[51, 38, 1420, 844]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5631,7 +5631,7 @@ Model {
 	Annotation {
 	  SID			  "675"
 	  Name			  "x_dot"
-	  Position		  [1806, 146, 1832, 158]
+	  Position		  [1806, 146, 1832, 160]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -5640,7 +5640,7 @@ Model {
 	Annotation {
 	  SID			  "676"
 	  Name			  "y_dot"
-	  Position		  [1806, 257, 1832, 269]
+	  Position		  [1806, 257, 1832, 271]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -5649,7 +5649,7 @@ Model {
 	Annotation {
 	  SID			  "677"
 	  Name			  "z_dot"
-	  Position		  [1806, 342, 1832, 354]
+	  Position		  [1806, 342, 1832, 356]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -7701,7 +7701,7 @@ Model {
       "rotor UAV\"\n4. Travis Dierks, and Sarangapani Jagannathan, \"Output Feedback Control of a Quadrotor UAV Using N"
       "eural Networks\"\n5. Z. Zuo, \"Trajectory tracking control design with command-filtered compensation for a quadr"
       "otor\""
-      Position		      [603, 13, 1665, 175]
+      Position		      [603, 13, 1664, 199]
       InternalMargins	      [0, 0, 0, 0]
       FixedHeight	      off
       FixedWidth	      off
@@ -7960,9 +7960,6 @@ Stateflow {
     screen		    [1 1 1366 768 1.333333333333333]
     treeNode		    [0 14 0 0]
     viewObj		    13
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -8227,11 +8224,12 @@ Stateflow {
       ";\n        off = 1;\n    elseif t < 20\n        x_d = 0;\n        y_d = 0;\n        z_d = 10;\n        off = 0;\n"
       "    elseif t < 25\n        x_d = 0;\n        y_d = 0;\n        z_d = 10-0.5*(t-10);\n        off = 1;\n    elsei"
       "f t < 27\n        x_d = 0;\n        y_d = 0;\n        z_d = 10;\n        off = 0;\n    else\n        x_d = 0;\n "
-      "       y_d = 0;\n        z_d = 10-0.5*(t-10);\n        off = 1; \n    end\nelse\n    if t < 20\n        x_d = 0;"
-      "\n        y_d = 0;\n        z_d = 10;\n    elseif t >= 20 && t < 80\n        x_d = (t-20)/5*sin(2*pi*t/20);\n   "
-      "     y_d = (t-20)/5*cos(2*pi*t/20);\n        z_d = 20;\n    else\n        x_d = 12*sin(2*pi*t/20);\n        y_d "
-      "= 12*cos(2*pi*t/20);\n        z_d = 20;     \n    end\nend    \npsi_d = pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off];\n "
-      "       \n"
+      "       y_d = 0;\n        z_d = 10-0.5*(t-10);\n        off = 1; \n    end\nelseif mode == 3\n    if t < 20\n    "
+      "    x_d = 0;\n        y_d = 0;\n        z_d = 10;\n    elseif t >= 20 && t < 80\n        x_d = (t-20)/5*sin(2*pi"
+      "*t/20);\n        y_d = (t-20)/5*cos(2*pi*t/20);\n        z_d = 20;\n    else\n        x_d = 12*sin(2*pi*t/20);\n"
+      "        y_d = 12*cos(2*pi*t/20);\n        z_d = 20;     \n    end\n    \nelse \n    % load in the data for the t"
+      "arget from workspace\n    % calculate optimal accerelation every 5 seconds \n    % use calculated acc. as the co"
+      "mmand for x_d, y_d, z_d, etc \nend    \npsi_d = pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off];\n        \n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
