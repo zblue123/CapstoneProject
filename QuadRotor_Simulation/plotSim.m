@@ -13,8 +13,8 @@ xy_max = max(max(x_max,y_max),4);
 z_max = max(z_sim);
 
 
-for i = 1:length(t)
-    plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),phi_sim(i),theta_sim(i),psi_sim(i),5,t(i),off_sim(i));
+for i = 1:5:length(t)
+    plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),psi_sim(i),theta_sim(i),phi_sim(i),5,t(i),off_sim(i));
     grid on;
     mytitle = sprintf('Time = %0.2f', t(i));
     title(mytitle);
