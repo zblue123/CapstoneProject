@@ -23,6 +23,10 @@ Kp_position = 5;
 Ki_position = 0;
 Kd_position = 10;
 
+Kp_z = 0.1;
+Ki_z = 0;
+Kd_z = 0.8;
+
 Kp_angle = 5*2;
 Ki_angle = 0;
 Kd_angle = 10*2;
