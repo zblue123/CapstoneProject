@@ -18,11 +18,14 @@ theta = atan(target_dY - target_dX) * 180 / pi;
 
 
 for i = 1:5:length(t)
-    plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),phi_sim(i),theta_sim(i),psi_sim(i),5,t(i),off_sim(i));
+    plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),psi_sim(i),theta_sim(i),phi_sim(i),5,t(i),off_sim(i));
     plotTarget(target_x(i), target_y(i), theta); 
     grid on;
     mytitle = sprintf('Time = %0.2f', t(i));
     title(mytitle);
+    xlabel('x');
+    ylabel('y');
+    zlabel('z');
     
     axis([xy_min-1, xy_max+1, xy_min-1, xy_max+1, z_min-1, z_max+1]);
     pause(dt/4);
