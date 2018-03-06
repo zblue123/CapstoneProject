@@ -25,14 +25,14 @@ thetaRad = pi * theta / 180;
 %
 % ------------------------------Code Starts Here------------------------------ %
 % Define the vertexes of the unit cubic
-ver = [X/2 Y/2 -Z/2;
-    -X/2 Y/2 -Z/2;
-    -X/2 Y/2 Z/2;
-    X/2 Y/2 Z/2;
-    -X/2 -Y/2 Z/2;
-    X/2 -Y/2 Z/2;
-    X/2 -Y/2 -Z/2;
-    -X/2 -Y/2 -Z/2];
+ver = [X/2 0.5 -0.5;
+    -X/2 0.5 -0.5;
+    -0.5 0.5 0.5;
+    0.5 0.5 0.5;
+    -0.5 -0.5 0.5;
+    0.5 -0.5 0.5;
+    0.5 -0.5 -0.5;
+    -0.5 -0.5 -0.5];
 
 rotMatrx = [cos(thetaRad) sin(thetaRad) 0; 
     -1*sin(thetaRad) cos(thetaRad) 0; 
@@ -42,9 +42,9 @@ for i=1:8
     ver(i,:) = ver(i,:) * rotMatrx;
 end
 
-ver(:,1) = ver(:,1)+origin(1); 
-ver(:,2) = ver(:,2)+origin(2);
-ver(:,3) = ver(:,3)+origin(3);
+ver(:,1) = (ver(:,1)+0.5)*X+origin(1); 
+ver(:,2) = (ver(:,2)+0.5)*Y+origin(2);
+ver(:,3) = (ver(:,3)+0.5)*Z+origin(3);
 
 
 %  Define the faces of the unit cubic
