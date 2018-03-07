@@ -16,21 +16,21 @@ function plotTarget(x, y, theta)
             
 
 % plot the red X 
-xq1 = [x-1.5,x+1.5];
-yq1 = ones(1,length(xq1)) * y;
+xq1 = [-1.5,1.5];
+yq1 = ones(1,length(xq1));
 zq = ones(1,length(xq1));
 xh1 = xq1; 
 yh1 = yq1; 
-xq2 = ones(1,length(xq1)) * x;
-yq2 = [y-1.5,y+1.5];
+xq2 = ones(1,length(xq1));
+yq2 = [-1.5,1.5];
 xh2 = xq2; 
 yh2 = yq2; 
 thetaRad = pi * theta / 180; 
 for i=1:length(xq1)
-    xh1(i) = xq1(i) * cos(thetaRad) - yq1(i) * sin(thetaRad); 
-    yh1(i) = xq1(i) * sin(thetaRad) + yq1(i) * cos(thetaRad); 
-    xh2(i) = xq2(i) * cos(thetaRad) - yq2(i) * sin(thetaRad); 
-    yh2(i) = xq2(i) * sin(thetaRad) + yq2(i) * cos(thetaRad); 
+    xh1(i) = xq1(i) * cos(thetaRad) - yq1(i) * sin(thetaRad) + x; 
+    yh1(i) = xq1(i) * sin(thetaRad) + yq1(i) * cos(thetaRad) + y; 
+    xh2(i) = xq2(i) * cos(thetaRad) - yq2(i) * sin(thetaRad) + x; 
+    yh2(i) = xq2(i) * sin(thetaRad) + yq2(i) * cos(thetaRad) + y; 
 end
     
 target1 = [xh1; yh1; zq];%[xh1;yh1;zq];

@@ -20,9 +20,9 @@ xyt_max = max(max(xt_max,yt_max),4);
 xy_max_total = max(xy_max,xyt_max);
 z_max = max(z_sim);
 
-% target_dY = target_y(length(t)) - target_y(1); 
-% target_dX = target_x(length(t)) - target_x(1); 
-theta = 0; % atan(target_dY - target_dX) * 180 / pi;
+target_dY = target_y(length(t)) - target_y(1); 
+target_dX = target_x(length(t)) - target_x(1); 
+theta = atan(target_dY - target_dX) * 180 / pi;
 
 
 for i = 1:5:length(t)

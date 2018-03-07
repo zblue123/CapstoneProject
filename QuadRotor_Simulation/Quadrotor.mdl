@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.764"
+    ComputedModelVersion    "1.776"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -76,11 +76,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"635"
 	Extents			[1882.0, 876.0]
-	ZoomFactor		[0.65431625616578482]
-	Offset			[-509.88856863538331, -126.9010669498382]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -114,9 +114,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sydney.m.katz"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 04 14:45:02 2018"
-  RTWModifiedTimeStamp	  442075501
-  ModelVersionFormat	  "1.%<AutoIncrement:764>"
+  LastModifiedDate	  "Wed Mar 07 11:54:52 2018"
+  RTWModifiedTimeStamp	  442324491
+  ModelVersionFormat	  "1.%<AutoIncrement:776>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1248,7 +1248,7 @@ Model {
   System {
     Name		    "Quadrotor"
     Location		    [-8, -8, 1928, 1048]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1360,7 +1360,7 @@ Model {
       System {
 	Name			"Discrete trajectory generator"
 	Location		[-8, -8, 1928, 1048]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8421,10 +8421,10 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function Cmd = G(t,mode)\noff = 0;\n\nx0_truck = [10;0;1.5];\nv0_truck = [2;0;0];\n\nif t < 10\n "
-      "   pos_d = [0;0;10];\nelse\n    pos_d =  x0_truck + v0_truck*(t-10);\nend\n\nx_d = pos_d(1);\ny_d = pos_d(2);\nz"
-      "_d = pos_d(3);\n\n%%%%%%%%%%%%% Makes it go in circles\n%         x_d = 12*sin(2*pi*t/20);\n%         y_d = 12*c"
-      "os(2*pi*t/20);  \n\npsi_d = 0; %pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off];\n        \nend"
+      script		      "function Cmd = G(t,mode)\noff = 0;\n\nx0_truck = [10;0;1.2];\nv0_truck = [3;0;0];\n\nif t < 10\n "
+      "   pos_d = [0;0;5];\nelse\n    pos_d =  x0_truck + v0_truck*(t-10);\nend\n\nx_d = pos_d(1);\ny_d = pos_d(2);\nz_"
+      "d = pos_d(3);\n\n%%%%%%%%%%%%% Makes it go in circles\n%         x_d = 12*sin(2*pi*t/20);\n%         y_d = 12*co"
+      "s(2*pi*t/20);  \n\npsi_d = 0; %pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off];\n        \nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
