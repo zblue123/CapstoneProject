@@ -42,9 +42,9 @@ for i=1:8
     ver(i,:) = ver(i,:) * rotMatrx;
 end
 
-ver(:,1) = ver(:,1)+origin(1); 
-ver(:,2) = ver(:,2)+origin(2);
-ver(:,3) = ver(:,3)+origin(3);
+ver(:,1) = ver(:,1)+origin(1)+X/2; 
+ver(:,2) = ver(:,2)+origin(2)+Y/2;
+ver(:,3) = ver(:,3)+origin(3)+Z/2;
 
 
 %  Define the faces of the unit cubic

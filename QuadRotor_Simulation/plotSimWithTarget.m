@@ -11,9 +11,10 @@ x_max = max(x_sim);
 y_max = max(y_sim);
 xy_max = max(max(x_max,y_max),4);
 z_max = max(z_sim);
-
-target_dY = target_y(length(t)) - target_y(1); 
-target_dX = target_x(length(t)) - target_x(1); 
+length(t)
+length(target_y)
+target_dY = target_y(length(t)-1) - target_y(1); 
+target_dX = target_x(length(t)-1) - target_x(1); 
 theta = atan(target_dY - target_dX) * 180 / pi; 
 
 

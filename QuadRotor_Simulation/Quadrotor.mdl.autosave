@@ -31,7 +31,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "$bdroot"
+      Cell		      "Quadrotor"
       PropName		      "mdlProps"
     }
   }
@@ -127,7 +127,7 @@ Model {
   LastModifiedBy	  "zblue"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Tue Mar 13 16:00:18 2018"
-  RTWModifiedTimeStamp	  442857257
+  RTWModifiedTimeStamp	  442858424
   ModelVersionFormat	  "1.%<AutoIncrement:793>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -248,7 +248,7 @@ Model {
 	  NumberNewtonIterations  1
 	  MaxStep		  "1e-3"
 	  MinStep		  "auto"
-	  MaxConsecutiveMinStep	  "1"
+	  MaxConsecutiveMinStep	  "2"
 	  RelTol		  "1e-3"
 	  EnableMultiTasking	  on
 	  EnableConcurrentExecution off

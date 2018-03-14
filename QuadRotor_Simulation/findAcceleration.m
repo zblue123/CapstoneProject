@@ -5,36 +5,19 @@ dV = drone_v0 - target_v0;
 % constraint: sqrt positive
 % positions are the same 
 
+% EXISTING VELOCITY: PDOT COMING OUT OF THE RHS OF MODEL 
 % decision vector: [xf a t] 
     function obj = fun(x) 
         t = x(3); 
         a = x(2);
         xf = x(1);
-        obj = t;
-        if dX ~= 0
+        obj = t + abs(xf - drone_x0);
+        if abs(dX) > 1
             obj = obj + abs(0.01/dX * (target_v0 - (drone_v0 + a * t)));
+        elseif abs(dX) ~= 0
+            obj = obj - t + abs(0.01/dX * (target_v0 - (drone_v0 + a * t)));
         end
-        
-        
-        
-        
-        %xf = x(1);
-%         a = x(2); 
-%         deltaX = dX;
-%         if dX == 0 
-%             obj = abs((drone_v0 - dV * sqrt(dV^2 - 2*a*dX) - target_v0));
-%         else
-%             if a == 0
-%                 a = 0.01;
-%             end
-%             deltaV = dV;
-%             t = (-deltaV + sqrt((deltaV)^2 - 2*a*deltaX))/a;
-%             if t < 0
-%                 t = (-deltaV + sqrt((deltaV)^2 - 2*a*deltaX))/a;
-%             end
-%             obj = t ;%+ abs(1/dX * ((drone_v0 - dV * sqrt(dV^2 - 2*a*dX) - target_v0)));
-%         end
-        
+       
     end
 
     %xf a t
@@ -50,9 +33,12 @@ g = 9.8;
 
 ub = [x_max, 3*g, 60]; 
 lb = [0, -3*g, 0]; 
-a_guess = dV; 
-x_guess = target_x0 + target_v0 * 4; 
-[quad_result, time] = fmincon(@fun,[x_guess,100,4],[],[],[],[],lb,ub,@mycon);
+
+t_guess = 2; 
+a_guess = 2 / t_guess^2 * (-1 * dX + t_guess * -1 * dV);
+x_guess = target_x0 + target_v0 * t_guess; 
+
+[quad_result, time] = fmincon(@fun,[x_guess,a_guess,t_guess],[],[],[],[],lb,ub,@mycon);
 
 % need to establish logic for an impossible/illogical result 
 % x_final = x_initial + v_initial * time_step + 0.5 * accelartion *
