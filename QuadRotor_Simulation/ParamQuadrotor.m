@@ -79,5 +79,6 @@ sys_d_actrl = c2d(sys_c_actrl,h,'tustin');
 Cd_a = tf(sys_d_actrl);
 
 % SMK Added
-set_param('Quadrotor','AlgebraicLoopSolver','LineSearch')
+set_param('Quadrotor','AlgebraicLoopSolver','LineSearch');
+dt = 0.01;
 
