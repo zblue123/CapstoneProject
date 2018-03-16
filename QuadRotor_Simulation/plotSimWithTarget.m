@@ -35,7 +35,7 @@ for i = 1:5:length(t)
     ylabel('y');
     zlabel('z');
     
-    view(0,90);
+    view(0,0);
     
     axis([xy_min_total-1, xy_max_total+1, xy_min_total-1, xy_max_total+1, z_min-1, z_max+1]);
     pause(dt/4);
