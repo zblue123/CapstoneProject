@@ -1,4 +1,4 @@
-function [t_ren,t_land,error_land] = computeMetrics(t,x,y,z,phi,theta,psi,off,x_t,y_t,z_t)
+function [t_ren,t_land,error_land] = computeMetrics(t,x,y,z,phi,theta,psi,off,x_t,y_t,z_t,mode)
 
 tolerance = 0.1; % Considered to have "rendezvoused" when within this tolerance of target
 dt = t(2) - t(1);
@@ -34,7 +34,8 @@ while unstable
     end
 end
 
-t_land = t(find(off==1,1));
+%t_land = t(find(off==1,1));
+t_land = t(find(mode==4,1));
 error_land = total_error(find(off==1,1));
 
 % Right now rendezvous mode does not kick in until 10s

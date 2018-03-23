@@ -1,12 +1,12 @@
 Model {
   Name			  "Quadrotor"
   Version		  8.9
-  SavedCharacterEncoding  "ISO-8859-1"
+  SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.887"
+    ComputedModelVersion    "1.892"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -22,7 +22,7 @@ Model {
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
   DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 0 0"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
   SLCCPlugin		  "on"
   slprops.hdlmdlprops {
     $PropName		    "HDLParams"
@@ -44,7 +44,7 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  LastSavedArchitecture	  "maci64"
+  LastSavedArchitecture	  "win64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    2
@@ -54,7 +54,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [60.0, 23.0, 1366.0, 741.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -76,11 +76,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1328.0, 565.0]
-	ZoomFactor		[1.5]
-	Offset			[-1027.6500413412964, 342.25125282780687]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"801"
+	Extents			[1882.0, 876.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -98,13 +98,13 @@ Model {
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAByAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALgD///8AAAVWAAACcAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKwD///8AAAeAAAADpQAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAACE/////wAAAAAAAAAA/////wEAAAD2/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAF6/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAPe/////wAAAAAAAAAA/"
-      "////wEAAAQN/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wEAAAB5/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFT/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAMr/////wAAAAAAAAAA/"
+      "////wEAAANa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   HideAutomaticNames	  on
@@ -112,11 +112,11 @@ Model {
   Creator		  "hts"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "SydneyKatz"
+  LastModifiedBy	  "sydney.m.katz"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 22 00:52:00 2018"
-  RTWModifiedTimeStamp	  443580714
-  ModelVersionFormat	  "1.%<AutoIncrement:887>"
+  LastModifiedDate	  "Fri Mar 23 15:01:16 2018"
+  RTWModifiedTimeStamp	  443718075
+  ModelVersionFormat	  "1.%<AutoIncrement:892>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1256,8 +1256,8 @@ Model {
   }
   System {
     Name		    "Quadrotor"
-    Location		    [60, 23, 1426, 764]
-    Open		    on
+    Location		    [-8, -8, 1928, 1048]
+    Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1269,9 +1269,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "844"
+    SIDHighWatermark	    "845"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -6077,7 +6077,7 @@ Model {
 	Annotation {
 	  SID			  "675"
 	  Name			  "x_dot"
-	  Position		  [1806, 146, 1832, 158]
+	  Position		  [1806, 146, 1832, 160]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -6086,7 +6086,7 @@ Model {
 	Annotation {
 	  SID			  "676"
 	  Name			  "y_dot"
-	  Position		  [1806, 257, 1832, 269]
+	  Position		  [1806, 257, 1832, 271]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -6095,7 +6095,7 @@ Model {
 	Annotation {
 	  SID			  "677"
 	  Name			  "z_dot"
-	  Position		  [1806, 342, 1832, 354]
+	  Position		  [1806, 342, 1832, 356]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -6938,6 +6938,17 @@ Model {
     }
     Block {
       BlockType		      ToWorkspace
+      Name		      "To Workspace13"
+      SID		      "845"
+      Ports		      [1]
+      Position		      [-415, 240, -355, 270]
+      ZOrder		      50
+      VariableName	      "mode"
+      MaxDataPoints	      "inf"
+      SampleTime	      "h*10"
+    }
+    Block {
+      BlockType		      ToWorkspace
       Name		      "To Workspace2"
       SID		      "654"
       Ports		      [1]
@@ -7039,8 +7050,8 @@ Model {
       Variant		      off
       System {
 	Name			"Triggered\nSubsystem"
-	Location		[1440, 23, 2806, 764]
-	Open			off
+	Location		[-8, -8, 1928, 1048]
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8113,7 +8124,7 @@ Model {
       SID		      "764"
       Position		      [-850, 855, -820, 885]
       ZOrder		      29
-      Value		      "10"
+      Value		      "5"
     }
     Block {
       BlockType		      Constant
@@ -8129,7 +8140,7 @@ Model {
       SID		      "780"
       Position		      [-850, 920, -820, 950]
       ZOrder		      38
-      X0		      "50"
+      X0		      "20"
     }
     Block {
       BlockType		      Memory
@@ -9036,9 +9047,19 @@ Model {
       Points		      [77, 0; 0, -195]
       Branch {
 	ZOrder			917
-	Points			[43, 0]
-	DstBlock		"Triggered\nSubsystem"
-	DstPort			2
+	Points			[21, 0]
+	Branch {
+	  ZOrder		  1317
+	  Points		  [0, -160]
+	  DstBlock		  "To Workspace13"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  1316
+	  Points		  [22, 0]
+	  DstBlock		  "Triggered\nSubsystem"
+	  DstPort		  2
+	}
       }
       Branch {
 	ZOrder			727
@@ -9317,7 +9338,7 @@ Model {
       BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
       DropShadow	      on
       AnnotationType	      "area_annotation"
-      ZOrder		      109
+      ZOrder		      111
       FontSize		      12
     }
     Annotation {
@@ -9328,7 +9349,7 @@ Model {
       "rotor UAV\"\n4. Travis Dierks, and Sarangapani Jagannathan, \"Output Feedback Control of a Quadrotor UAV Using N"
       "eural Networks\"\n5. Z. Zuo, \"Trajectory tracking control design with command-filtered compensation for a quadr"
       "otor\""
-      Position		      [603, 13, 1665, 175]
+      Position		      [603, 13, 1664, 199]
       InternalMargins	      [0, 0, 0, 0]
       FixedHeight	      off
       FixedWidth	      off
@@ -9814,6 +9835,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 25 0 0]
     viewObj		    24
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10478,9 +10502,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 57 0 0]
     viewObj		    56
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10515,7 +10536,7 @@ Stateflow {
       "de;\n\ntotal_error = 0;\n\nswitch curr_mode\n    case 1 % Mission\n        if ~mission\n            mode = 2; % "
       "No longer in mission mode so go to rendezvous\n        end\n    case 2 % Rendezvous\n        x_error = x - x_t;\n"
       "        y_error = y - y_t;\n        z_error = z - 1;\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_er"
-      "ror.^2));\n        \n        if total_error < 0.25\n            count = curr_count + 1;\n            if count > "
+      "ror.^2));\n        \n        if total_error < 0.85\n            count = curr_count + 1;\n            if count > "
       "count_min\n                mode = 3; % Close enough to land\n            end\n        end\n    case 3 % Landing\n"
       "        if z <= 1\n            mode = 4;\n            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n    "
       "    end\nend\n\nend\n"
@@ -10895,7 +10916,7 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function [mission,pos_d] = missionPlanner(t)\n\nmission = 0;\nx_d = 0;\ny_d = 0;\nz_d = 0;\n\nif "
-      "t < 10\n    mission = 1;\n    z_d = 15;\nend\n\npos_d = [x_d,y_d,z_d];\n\nend\n"
+      "t < 10\n    mission = 1;\n    z_d = 5;\nend\n\npos_d = [x_d,y_d,z_d];\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
