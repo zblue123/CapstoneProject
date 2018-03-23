@@ -3,7 +3,7 @@ function plotTarget(x, y, theta)
 % currently depends on drone trajectory to define the region in which it is
 % flying 
     function h = plotCircle(i,j,r)
-        C = [i,j,1.05] ;   % center of circle
+        C = [i,j,1.0] ;   % center of circle
         R = r ;    % Radius of circle
         teta=0:0.01:2*pi ;
         x_t=C(1)+R*cos(teta);
@@ -16,27 +16,27 @@ function plotTarget(x, y, theta)
             
 
 % plot the red X 
-xq1 = [x-1.5,x+1.5];
-yq1 = ones(1,length(xq1)) * y;
+xq1 = [-1.5,1.5];
+yq1 = zeros(1,length(xq1));
 zq = ones(1,length(xq1));
 xh1 = xq1; 
 yh1 = yq1; 
-xq2 = ones(1,length(xq1)) * x;
-yq2 = [y-1.5,y+1.5];
+xq2 = zeros(1,length(xq1));
+yq2 = [-1.5,1.5];
 xh2 = xq2; 
 yh2 = yq2; 
 thetaRad = pi * theta / 180; 
 for i=1:length(xq1)
-    xh1(i) = xq1(i) * cos(thetaRad) - yq1(i) * sin(thetaRad); 
-    yh1(i) = xq1(i) * sin(thetaRad) + yq1(i) * cos(thetaRad); 
-    xh2(i) = xq2(i) * cos(thetaRad) - yq2(i) * sin(thetaRad); 
-    yh2(i) = xq2(i) * sin(thetaRad) + yq2(i) * cos(thetaRad); 
+    xh1(i) = xq1(i) * cos(thetaRad) - yq1(i) * sin(thetaRad) + x; 
+    yh1(i) = xq1(i) * sin(thetaRad) + yq1(i) * cos(thetaRad) + y; 
+    xh2(i) = xq2(i) * cos(thetaRad) - yq2(i) * sin(thetaRad) + x; 
+    yh2(i) = xq2(i) * sin(thetaRad) + yq2(i) * cos(thetaRad) + y; 
 end
     
 target1 = [xh1; yh1; zq];%[xh1;yh1;zq];
 target2 = [xh2; yh2; zq];%[xh2;yh2;zq];
 
-plotCircle(x*cos(thetaRad) - y * sin(thetaRad), y * cos(thetaRad) + x * sin(thetaRad),1.5); 
+plotCircle(x,y,1.5); 
 
 % height of truck is 1
 P = [x,y,0.5] ;   % your center point 

@@ -23,6 +23,10 @@ Kp_position = 5;
 Ki_position = 0;
 Kd_position = 10;
 
+Kp_z = 0.1;
+Ki_z = 0;
+Kd_z = 0.8;
+
 Kp_angle = 5*2;
 Ki_angle = 0;
 Kd_angle = 10*2;
@@ -75,5 +79,6 @@ sys_d_actrl = c2d(sys_c_actrl,h,'tustin');
 Cd_a = tf(sys_d_actrl);
 
 % SMK Added
-set_param('Quadrotor','AlgebraicLoopSolver','LineSearch')
+set_param('Quadrotor','AlgebraicLoopSolver','LineSearch');
+dt = 0.01;
 

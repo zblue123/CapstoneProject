@@ -69,13 +69,13 @@ prop1_lefth = Tq_h*[prop1_leftq;ones(1,size(prop1_leftq,2))];
 prop2_lefth = Tq_h*[prop2_leftq;ones(1,size(prop2_leftq,2))];
 
 
-plot3(arm1h(1,:),arm1h(2,:),arm1h(3,:),'LineWidth',2,'Color','b');
+plot3(arm1h(1,:),arm1h(2,:),arm1h(3,:),'LineWidth',2,'Color','g');
 hold on;
-plot3(arm2h(1,:),arm2h(2,:),arm2h(3,:),'LineWidth',2,'Color','b');
-plot3(sup_fronth(1,:),sup_fronth(2,:),sup_fronth(3,:),'LineWidth',2,'Color','b');
-plot3(sup_backh(1,:),sup_backh(2,:),sup_backh(3,:),'LineWidth',2,'Color','b');
-plot3(sup_righth(1,:),sup_righth(2,:),sup_righth(3,:),'LineWidth',2,'Color','b');
-plot3(sup_lefth(1,:),sup_lefth(2,:),sup_lefth(3,:),'LineWidth',2,'Color','b');
+plot3(arm2h(1,:),arm2h(2,:),arm2h(3,:),'LineWidth',2,'Color','g');
+plot3(sup_fronth(1,:),sup_fronth(2,:),sup_fronth(3,:),'LineWidth',2,'Color','g');
+plot3(sup_backh(1,:),sup_backh(2,:),sup_backh(3,:),'LineWidth',2,'Color','g');
+plot3(sup_righth(1,:),sup_righth(2,:),sup_righth(3,:),'LineWidth',2,'Color','g');
+plot3(sup_lefth(1,:),sup_lefth(2,:),sup_lefth(3,:),'LineWidth',2,'Color','g');
 
 plot3(prop1_fronth(1,:),prop1_fronth(2,:),prop1_fronth(3,:),'LineWidth',2,'Color','r');
 plot3(prop1_backh(1,:),prop1_backh(2,:),prop1_backh(3,:),'LineWidth',2,'Color','r');
