@@ -18,7 +18,7 @@ target_dX = target_x(length(t)-1) - target_x(1);
 theta = atan(target_dY - target_dX) * 180 / pi; 
 
 
-for i = 1:5:length(t)
+for i = 1:3:length(t)
     plotQuadrotor(x_sim(i),y_sim(i),z_sim(i),phi_sim(i),theta_sim(i),psi_sim(i),5,t(i),off_sim(i));
     plotTarget(target_x(i), target_y(i), theta); 
     grid on;
@@ -26,7 +26,7 @@ for i = 1:5:length(t)
     title(mytitle);
     
     axis([xy_min-1, xy_max+1, xy_min-1, xy_max+1, z_min-1, z_max+1]);
-    pause(dt/4);
+    pause(dt/4);0
     
     if i ~= length(t)
         clf;

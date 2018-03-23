@@ -11,11 +11,11 @@ dV = drone_v0 - target_v0;
         t = x(3); 
         a = x(2);
         xf = x(1);
-        obj = t + abs(xf - drone_x0);
-        if abs(dX) > 1
-            obj = obj + abs(0.01/dX * (target_v0 - (drone_v0 + a * t)));
+        obj = t; % + abs(xf - drone_x0);
+        if abs(dX) > 0.1
+            obj = obj + abs(1/dX * (target_v0 - (drone_v0 + a * t)));
         elseif abs(dX) ~= 0
-            obj = obj - t + abs(0.01/dX * (target_v0 - (drone_v0 + a * t)));
+            obj = obj - t + abs(1/dX * (target_v0 - (drone_v0 + a * t)));
         end
        
     end
@@ -24,18 +24,25 @@ dV = drone_v0 - target_v0;
     function [c,ceq] = mycon(x)
         t = x(3);
         a = x(2); 
-        ceq = target_x0 + target_v0*t - drone_x0 - drone_v0*t - 0.5*a*t*t;
-        c = [2*a*dX - (dV)^2; drone_x0 + drone_v0*t + 0.5*a*t*t];
+        xf = x(1);
+        x_ts =  drone_x0 + drone_v0 * time_step + 0.5 * a * time_step ^ 2;
+        ceq = [target_x0 + target_v0*t - drone_x0 - drone_v0*t - 0.5*a*t*t;
+            target_x0 + target_v0*t - xf;
+            t - (-dV + sqrt((dV)^2 - 2*a*dX))/a];
+        c = [2*a*dX - (dV)^2; 
+            -drone_x0 - drone_v0*t - 0.5*a*t*t;
+            -abs(dX) + abs(x_ts - (target_x0 + target_v0*time_step))];
+            %-drone_x0 - drone_v0 * time_step - 0.5 * a * time_step ^ 2];
     end
 
 
 g = 9.8; 
 
-ub = [x_max, 3*g, 60]; 
-lb = [0, -3*g, 0]; 
+ub = [x_max, g, 60]; 
+lb = [0, -g, 0]; 
 
 t_guess = 2; 
-a_guess = 2 / t_guess^2 * (-1 * dX + t_guess * -1 * dV);
+a_guess = 2 / t_guess^2 * (-1 * dX - t_guess * dV);
 x_guess = target_x0 + target_v0 * t_guess; 
 
 [quad_result, time] = fmincon(@fun,[x_guess,a_guess,t_guess],[],[],[],[],lb,ub,@mycon);

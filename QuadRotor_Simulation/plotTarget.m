@@ -36,8 +36,8 @@ end
 target1 = [xh1; yh1; zq];%[xh1;yh1;zq];
 target2 = [xh2; yh2; zq];%[xh2;yh2;zq];
 
-plotCircle(x*cos(thetaRad) - y * sin(thetaRad), y * cos(thetaRad) + x * sin(thetaRad),1.5); 
-
+%plotCircle(x*cos(thetaRad) - y * sin(thetaRad), y * cos(thetaRad) + x * sin(thetaRad),1.5); 
+plotCircle(x,y,1.5);
 % height of truck is 1
 P = [x,y,0.5] ;   % your center point 
 L = [3,4,1] ;  % your cube dimensions 
