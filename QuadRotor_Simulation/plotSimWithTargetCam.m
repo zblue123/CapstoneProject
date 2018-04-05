@@ -6,7 +6,7 @@ target_dY = target_y(length(t)) - target_y(1);
 target_dX = target_x(length(t)) - target_x(1); 
 theta = atan(target_dY - target_dX) * 180 / pi;
 
-xy_width = 50;
+xy_width = 75;
 z_min = 0;
 z_max = max(z_sim) + 1;
 

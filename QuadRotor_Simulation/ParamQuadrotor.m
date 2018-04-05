@@ -1,44 +1,46 @@
 clear all
 close all
-m = 1;
-Ixx = 8.1e-3;
-Iyy = 8.1e-3;
-Izz = 14.2e-3;
+m = 1; % 25
+Ixx = 0.7625; %8.1e-3; % 0.7625
+Iyy = 0.7625; %8.1e-3; % 0.7625
+Izz = 1.2183; %14.2e-3; % 1.2183
 I = [Ixx 0 0;0 Iyy 0;0 0 Izz];
-Jtp = 104e-6;
-Ke = 6.3e-3;
-Km = 6.3e-3;
-L = 15e-6;
-b = 54.2e-6;
-l = 0.24;
-g = 9.81;
-n = 0.9;
-N = 5.6;
-h = 1e-3;
-R = 0.6;
-d = 1.1e-6; % drag factor
+Jtp = 0.0072; %104e-6; % 0.0072
+Ke = 0.0796; %6.3e-3; % 0.0796
+Km = 0.0796; %6.3e-3; % 0.0796
+L = 15e-6; % % Keep same
+b = 0.0013; %54.2e-6; % 0.0013
+l = sqrt(2)/2; %0.24; % sqrt(2)/2
+g = 9.81; % same
+n = 0.9; % same
+N = 5.6; %1; %5.6; % 1?
+h = 1e-3; % same
+R = 1.5; %0.6; % 1.5
+d = 5.1467e-5; %1.1e-6; % drag factor % 5.1467e-5
 % Motor Controller Design
 
-Kp_position = 5;
+Kp_position = 0.5;
 Ki_position = 0;
-Kd_position = 10;
+Kd_position = 2;
 
 Kp_z = 0.1;
-Ki_z = 0;
-Kd_z = 0.8;
+Ki_z = 0.1;
+Kd_z = 5;
 
 Kp_angle = 5*2;
 Ki_angle = 0;
 Kd_angle = 10*2;
 
-Kp_motor = 1;
-Ki_motor = 10;
+Kp_motor = 15;
+Ki_motor = 30;
 Kd_motor = 0;
 
 %w'=Apw+Bpv+Cp
-Ap = -22.5;
-Bp = 509;
-Cp = 489;
+wh = 43;
+
+Ap = -Ke*Km*n*N*N/(Jtp*R) - 2*d*wh/Jtp; %-22.5;
+Bp = Km*n*N/(Jtp*R); %509;
+Cp = d*wh*wh/Jtp; %489;
 a1 = Ap;
 b1 = Bp;
 c1 = 1;

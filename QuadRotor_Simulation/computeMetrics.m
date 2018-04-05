@@ -36,6 +36,7 @@ end
 
 %t_land = t(find(off==1,1));
 t_land = t(find(mode==4,1));
+t_ren = t(find(mode==3,1));
 error_land = total_error(find(off==1,1));
 
 % Right now rendezvous mode does not kick in until 10s
