@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.931"
+    ComputedModelVersion    "1.949"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -114,9 +114,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sydney.m.katz"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 04 20:54:02 2018"
-  RTWModifiedTimeStamp	  444776041
-  ModelVersionFormat	  "1.%<AutoIncrement:931>"
+  LastModifiedDate	  "Wed Apr 04 21:25:27 2018"
+  RTWModifiedTimeStamp	  444777924
+  ModelVersionFormat	  "1.%<AutoIncrement:949>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -10216,6 +10216,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 25 0 0]
     viewObj		    24
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10246,12 +10249,12 @@ Stateflow {
       "mode\n    case 1 % Mission\n        % For now mission is just to hover at 5m, truck stationary at\n        % ini"
       "tial position\n        x_d = pos_d(1);\n        y_d = pos_d(2);\n        z_d = pos_d(3);\n        vx = 0;\n     "
       "   vy = 0;\n    case 2 % Rendezvous\n        % Try to meet up with and maintain hover 1.2m above the truck,\n   "
-      "     % truck following trajectory\n        x_d = x_t;\n        y_d = y_t;\n        z_d = 1.55;\n    case 3 % Lan"
-      "ding\n        % Maintain truck's position and land\n        x_d = x_t;\n        y_d = y_t;\n        z_d = 1;\n  "
-      "  case 4 % Landed\n        % Propellers off (resting on truck)\n        x_d = x_t;\n        y_d = y_t;\n        "
-      "z_d = 1;\n        off = 1;\n    otherwise\n        x_d = 0;\n        y_d = 0;\n        z_d = 0;\nend\n\n%%%%%%%%"
-      "%%%%% Makes it go in circles\n%         x_d = 12*sin(2*pi*t/20);\n%         y_d = 12*cos(2*pi*t/20);  \n\npsi_d "
-      "= 0; %pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off;vx;vy];\n        \nend"
+      "     % truck following trajectory\n        x_d = x_t;\n        y_d = y_t;\n        z_d = 15;\n    case 3 % Landi"
+      "ng\n        % Maintain truck's position and land\n        x_d = x_t;\n        y_d = y_t;\n        z_d = 1;\n    "
+      "case 4 % Landed\n        % Propellers off (resting on truck)\n        x_d = x_t;\n        y_d = y_t;\n        z_"
+      "d = 1;\n        off = 1;\n    otherwise\n        x_d = 0;\n        y_d = 0;\n        z_d = 0;\nend\n\n%%%%%%%%%%"
+      "%%% Makes it go in circles\n%         x_d = 12*sin(2*pi*t/20);\n%         y_d = 12*cos(2*pi*t/20);  \n\npsi_d = "
+      "0; %pi/6;\nCmd = [x_d;y_d;z_d;psi_d;off;vx;vy];\n        \nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -10917,13 +10920,13 @@ Stateflow {
       "urr_mode;\n\ntotal_error = 0;\n\nKp_xy = 0.2; \nKi_xy = 0;\nKd_xy = 0.8;\nKp_z = 0.2;\nKi_z = 0;\nKd_z = 0.8;\nK"
       "p_z_neg = 0.2;\nKi_z_neg = 0;\nKd_z_neg = 0.8;\n\nswitch curr_mode\n    case 1 % Mission\n        if ~mission\n "
       "           mode = 2; % No longer in mission mode so go to rendezvous\n        end\n    case 2 % Rendezvous\n    "
-      "    Kp_z_neg = 0.2;\n        Ki_z_neg = 0;\n        Kd_z_neg = 3;\n        \n        x_error = x - x_t;\n       "
-      " y_error = y - y_t;\n        z_error = z - 1;\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_error.^2)"
-      ");\n        \n        if total_error < 1.6\n            count = curr_count + 1;\n            if count > count_mi"
-      "n\n                mode = 3; % Close enough to land\n            end\n        end\n    case 3 % Landing\n       "
-      " if z <= 1\n            mode = 4;\n            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n        end"
-      "\nend\n\nPID_k = [Kp_xy, Ki_xy, Kd_xy, Kp_xy, Ki_xy, Kd_xy, Kp_z, Ki_z, Kd_z, Kp_z_neg, Ki_z_neg, Kd_z_neg]';\n\n"
-      "end\n"
+      "    Kp_z = 2.5;\n        Ki_z = 0;\n        Kd_z = 5;\n        \n        Kp_z_neg = 0.2;\n        Ki_z_neg = 0;\n"
+      "        Kd_z_neg = 3;\n        \n        x_error = x - x_t;\n        y_error = y - y_t;\n        z_error = z - 1"
+      ";\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_error.^2));\n        \n        if total_error < 16 &&"
+      " z > 10\n            count = curr_count + 1;\n            if count > count_min\n                mode = 3; % Clos"
+      "e enough to land\n            end\n        end\n    case 3 % Landing\n        if z <= 1\n            mode = 4;\n"
+      "            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n        end\nend\n\nPID_k = [Kp_xy, Ki_xy, Kd_"
+      "xy, Kp_xy, Ki_xy, Kd_xy, Kp_z, Ki_z, Kd_z, Kp_z_neg, Ki_z_neg, Kd_z_neg]';\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
