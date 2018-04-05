@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.912"
+    ComputedModelVersion    "1.931"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -79,8 +79,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1882.0, 876.0]
-	ZoomFactor		[1.5]
-	Offset			[-309.374736300067, 186.37615856004092]
+	ZoomFactor		[1.0]
+	Offset			[-1111.6560696795832, 178.99471690213238]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -114,9 +114,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sydney.m.katz"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 04 20:20:20 2018"
-  RTWModifiedTimeStamp	  444774017
-  ModelVersionFormat	  "1.%<AutoIncrement:912>"
+  LastModifiedDate	  "Wed Apr 04 20:54:02 2018"
+  RTWModifiedTimeStamp	  444776041
+  ModelVersionFormat	  "1.%<AutoIncrement:931>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1269,9 +1269,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "847"
+    SIDHighWatermark	    "872"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -1692,7 +1692,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Mode Selector"
       SID		      "750"
-      Ports		      [9, 3]
+      Ports		      [9, 4]
       Position		      [-715, 434, -535, 646]
       ZOrder		      22
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1717,7 +1717,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"32"
+	SIDHighWatermark	"33"
 	Block {
 	  BlockType		  Inport
 	  Name			  "curr_pland"
@@ -1803,7 +1803,7 @@ Model {
 	  Name			  " Demux "
 	  SID			  "750::20"
 	  Ports			  [1, 1]
-	  Position		  [270, 245, 320, 285]
+	  Position		  [270, 280, 320, 320]
 	  ZOrder		  11
 	  Outputs		  "1"
 	}
@@ -1812,11 +1812,11 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "750::19"
 	  Tag			  "Stateflow S-Function Quadrotor 6"
-	  Ports			  [9, 4]
+	  Ports			  [9, 5]
 	  Position		  [180, 110, 230, 310]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[9 4]"
+	  PortCounts		  "[9 5]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  SFcnIsStateOwnerBlock	  off
@@ -1832,12 +1832,16 @@ Model {
 	    PortNumber		    4
 	    Name		    "mode"
 	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "PID_k"
+	  }
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
 	  SID			  "750::21"
-	  Position		  [460, 256, 480, 274]
+	  Position		  [460, 291, 480, 309]
 	  ZOrder		  12
 	}
 	Block {
@@ -1866,64 +1870,73 @@ Model {
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "PID_k"
+	  SID			  "750::33"
+	  Position		  [460, 206, 480, 224]
+	  ZOrder		  24
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
 	Line {
-	  ZOrder		  219
+	  ZOrder		  233
 	  SrcBlock		  "curr_pland"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  220
+	  ZOrder		  234
 	  SrcBlock		  "curr_mode"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  221
+	  ZOrder		  235
 	  SrcBlock		  "curr_count"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  222
+	  ZOrder		  236
 	  SrcBlock		  "mission"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  223
+	  ZOrder		  237
 	  SrcBlock		  "x"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  224
+	  ZOrder		  238
 	  SrcBlock		  "y"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  6
 	}
 	Line {
-	  ZOrder		  225
+	  ZOrder		  239
 	  SrcBlock		  "z"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  7
 	}
 	Line {
-	  ZOrder		  226
+	  ZOrder		  240
 	  SrcBlock		  "x_t"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  8
 	}
 	Line {
-	  ZOrder		  227
+	  ZOrder		  241
 	  SrcBlock		  "y_t"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -1931,7 +1944,7 @@ Model {
 	}
 	Line {
 	  Name			  "pland"
-	  ZOrder		  228
+	  ZOrder		  242
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -1940,7 +1953,7 @@ Model {
 	}
 	Line {
 	  Name			  "count"
-	  ZOrder		  229
+	  ZOrder		  243
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  3
@@ -1949,7 +1962,7 @@ Model {
 	}
 	Line {
 	  Name			  "mode"
-	  ZOrder		  230
+	  ZOrder		  244
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  4
@@ -1957,14 +1970,23 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  231
+	  Name			  "PID_k"
+	  ZOrder		  245
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "PID_k"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  246
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  232
+	  ZOrder		  247
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -2779,514 +2801,6 @@ Model {
       LimitOutput	      off
       UpperSaturationLimit    "inf"
       LowerSaturationLimit    "-inf"
-      LinearizeAsGain	      off
-      AntiWindupMode	      "none"
-      Kb		      "1"
-      TrackingMode	      off
-      Kt		      "1"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LockScale		      off
-      PParamMin		      "[]"
-      PParamMax		      "[]"
-      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      IParamMin		      "[]"
-      IParamMax		      "[]"
-      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      DParamMin		      "[]"
-      DParamMax		      "[]"
-      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      NParamMin		      "[]"
-      NParamMax		      "[]"
-      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbParamMin	      "[]"
-      KbParamMax	      "[]"
-      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
-      KtParamMin	      "[]"
-      KtParamMax	      "[]"
-      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
-      POutMin		      "[]"
-      POutMax		      "[]"
-      POutDataTypeStr	      "Inherit: Inherit via internal rule"
-      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IOutMin		      "[]"
-      IOutMax		      "[]"
-      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DOutMin		      "[]"
-      DOutMax		      "[]"
-      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NOutMin		      "[]"
-      NOutMax		      "[]"
-      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      KbOutMin		      "[]"
-      KbOutMax		      "[]"
-      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KtOutMin		      "[]"
-      KtOutMax		      "[]"
-      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IntegratorOutMin	      "[]"
-      IntegratorOutMax	      "[]"
-      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-      FilterOutMin	      "[]"
-      FilterOutMax	      "[]"
-      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
-      SumOutMin		      "[]"
-      SumOutMax		      "[]"
-      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SumI1OutMin	      "[]"
-      SumI1OutMax	      "[]"
-      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI2OutMin	      "[]"
-      SumI2OutMax	      "[]"
-      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI3OutMin	      "[]"
-      SumI3OutMax	      "[]"
-      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumDOutMin	      "[]"
-      SumDOutMax	      "[]"
-      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
-      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
-      SaturationOutMin	      "[]"
-      SaturationOutMax	      "[]"
-      SaturationOutDataTypeStr "Inherit: Same as input"
-      IntegratorContinuousStateAttributes "''"
-      IntegratorStateMustResolveToSignalObject off
-      IntegratorRTWStateStorageClass "Auto"
-      FilterContinuousStateAttributes "''"
-      FilterStateMustResolveToSignalObject off
-      FilterRTWStateStorageClass "Auto"
-      DifferentiatorICPrevScaledInput "0"
-      DifferentiatorOutMin    "[]"
-      DifferentiatorOutMax    "[]"
-      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
-      InitialConditionSetting "State (most efficient)"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "P pos1"
-      SID		      "588"
-      Ports		      [1, 1]
-      Position		      [240, 412, 280, 448]
-      ZOrder		      -17
-      LibraryVersion	      "1.391"
-      SourceBlock	      "simulink/Continuous/PID Controller"
-      SourceType	      "PID 1dof"
-      SourceProductName	      "Simulink"
-      SourceProductBaseCode   "SL"
-      ContentPreviewEnabled   off
-      Controller	      "PID"
-      TimeDomain	      "Discrete-time"
-      SampleTime	      "h"
-      IntegratorMethod	      "Forward Euler"
-      FilterMethod	      "Forward Euler"
-      Form		      "Parallel"
-      UseFilter		      on
-      ControllerParametersSource "internal"
-      P			      "Kp_position"
-      I			      "Ki_position"
-      D			      "Kd_position"
-      N			      "100"
-      InitialConditionSource  "internal"
-      InitialConditionForIntegrator "0"
-      InitialConditionForFilter	"0"
-      ExternalReset	      "none"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      LimitOutput	      off
-      UpperSaturationLimit    "5"
-      LowerSaturationLimit    "-10"
-      LinearizeAsGain	      off
-      AntiWindupMode	      "none"
-      Kb		      "1"
-      TrackingMode	      off
-      Kt		      "1"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LockScale		      off
-      PParamMin		      "[]"
-      PParamMax		      "[]"
-      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      IParamMin		      "[]"
-      IParamMax		      "[]"
-      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      DParamMin		      "[]"
-      DParamMax		      "[]"
-      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      NParamMin		      "[]"
-      NParamMax		      "[]"
-      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbParamMin	      "[]"
-      KbParamMax	      "[]"
-      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
-      KtParamMin	      "[]"
-      KtParamMax	      "[]"
-      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
-      POutMin		      "[]"
-      POutMax		      "[]"
-      POutDataTypeStr	      "Inherit: Inherit via internal rule"
-      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IOutMin		      "[]"
-      IOutMax		      "[]"
-      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DOutMin		      "[]"
-      DOutMax		      "[]"
-      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NOutMin		      "[]"
-      NOutMax		      "[]"
-      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      KbOutMin		      "[]"
-      KbOutMax		      "[]"
-      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KtOutMin		      "[]"
-      KtOutMax		      "[]"
-      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IntegratorOutMin	      "[]"
-      IntegratorOutMax	      "[]"
-      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-      FilterOutMin	      "[]"
-      FilterOutMax	      "[]"
-      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
-      SumOutMin		      "[]"
-      SumOutMax		      "[]"
-      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SumI1OutMin	      "[]"
-      SumI1OutMax	      "[]"
-      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI2OutMin	      "[]"
-      SumI2OutMax	      "[]"
-      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI3OutMin	      "[]"
-      SumI3OutMax	      "[]"
-      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumDOutMin	      "[]"
-      SumDOutMax	      "[]"
-      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
-      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
-      SaturationOutMin	      "[]"
-      SaturationOutMax	      "[]"
-      SaturationOutDataTypeStr "Inherit: Same as input"
-      IntegratorContinuousStateAttributes "''"
-      IntegratorStateMustResolveToSignalObject off
-      IntegratorRTWStateStorageClass "Auto"
-      FilterContinuousStateAttributes "''"
-      FilterStateMustResolveToSignalObject off
-      FilterRTWStateStorageClass "Auto"
-      DifferentiatorICPrevScaledInput "0"
-      DifferentiatorOutMin    "[]"
-      DifferentiatorOutMax    "[]"
-      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
-      InitialConditionSetting "State (most efficient)"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "P pos2"
-      SID		      "189"
-      Ports		      [5, 1]
-      Position		      [240, 314, 310, 386]
-      ZOrder		      -18
-      LibraryVersion	      "1.391"
-      SourceBlock	      "simulink/Continuous/PID Controller"
-      SourceType	      "PID 1dof"
-      SourceProductName	      "Simulink"
-      SourceProductBaseCode   "SL"
-      ContentPreviewEnabled   off
-      Controller	      "PID"
-      TimeDomain	      "Discrete-time"
-      SampleTime	      "h"
-      IntegratorMethod	      "Forward Euler"
-      FilterMethod	      "Forward Euler"
-      Form		      "Parallel"
-      UseFilter		      on
-      ControllerParametersSource "external"
-      P			      "Kp_position"
-      I			      "Ki_position"
-      D			      "Kd_position"
-      N			      "100"
-      InitialConditionSource  "internal"
-      InitialConditionForIntegrator "0"
-      InitialConditionForFilter	"0"
-      ExternalReset	      "none"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      LimitOutput	      off
-      UpperSaturationLimit    "5"
-      LowerSaturationLimit    "-10"
-      LinearizeAsGain	      off
-      AntiWindupMode	      "none"
-      Kb		      "1"
-      TrackingMode	      off
-      Kt		      "1"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LockScale		      off
-      PParamMin		      "[]"
-      PParamMax		      "[]"
-      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      IParamMin		      "[]"
-      IParamMax		      "[]"
-      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      DParamMin		      "[]"
-      DParamMax		      "[]"
-      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      NParamMin		      "[]"
-      NParamMax		      "[]"
-      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbParamMin	      "[]"
-      KbParamMax	      "[]"
-      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
-      KtParamMin	      "[]"
-      KtParamMax	      "[]"
-      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
-      POutMin		      "[]"
-      POutMax		      "[]"
-      POutDataTypeStr	      "Inherit: Inherit via internal rule"
-      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IOutMin		      "[]"
-      IOutMax		      "[]"
-      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DOutMin		      "[]"
-      DOutMax		      "[]"
-      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NOutMin		      "[]"
-      NOutMax		      "[]"
-      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      KbOutMin		      "[]"
-      KbOutMax		      "[]"
-      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KtOutMin		      "[]"
-      KtOutMax		      "[]"
-      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IntegratorOutMin	      "[]"
-      IntegratorOutMax	      "[]"
-      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-      FilterOutMin	      "[]"
-      FilterOutMax	      "[]"
-      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
-      SumOutMin		      "[]"
-      SumOutMax		      "[]"
-      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SumI1OutMin	      "[]"
-      SumI1OutMax	      "[]"
-      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI2OutMin	      "[]"
-      SumI2OutMax	      "[]"
-      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI3OutMin	      "[]"
-      SumI3OutMax	      "[]"
-      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumDOutMin	      "[]"
-      SumDOutMax	      "[]"
-      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
-      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
-      SaturationOutMin	      "[]"
-      SaturationOutMax	      "[]"
-      SaturationOutDataTypeStr "Inherit: Same as input"
-      IntegratorContinuousStateAttributes "''"
-      IntegratorStateMustResolveToSignalObject off
-      IntegratorRTWStateStorageClass "Auto"
-      FilterContinuousStateAttributes "''"
-      FilterStateMustResolveToSignalObject off
-      FilterRTWStateStorageClass "Auto"
-      DifferentiatorICPrevScaledInput "0"
-      DifferentiatorOutMin    "[]"
-      DifferentiatorOutMax    "[]"
-      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
-      InitialConditionSetting "State (most efficient)"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "P pos3"
-      SID		      "589"
-      Ports		      [1, 1]
-      Position		      [240, 477, 280, 513]
-      ZOrder		      -19
-      LibraryVersion	      "1.391"
-      SourceBlock	      "simulink/Continuous/PID Controller"
-      SourceType	      "PID 1dof"
-      SourceProductName	      "Simulink"
-      SourceProductBaseCode   "SL"
-      ContentPreviewEnabled   off
-      Controller	      "PID"
-      TimeDomain	      "Discrete-time"
-      SampleTime	      "h"
-      IntegratorMethod	      "Forward Euler"
-      FilterMethod	      "Forward Euler"
-      Form		      "Parallel"
-      UseFilter		      on
-      ControllerParametersSource "internal"
-      P			      "Kp_position"
-      I			      "Ki_position"
-      D			      "Kd_position"
-      N			      "100"
-      InitialConditionSource  "internal"
-      InitialConditionForIntegrator "0"
-      InitialConditionForFilter	"0"
-      ExternalReset	      "none"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      LimitOutput	      off
-      UpperSaturationLimit    "5"
-      LowerSaturationLimit    "-10"
-      LinearizeAsGain	      off
-      AntiWindupMode	      "none"
-      Kb		      "1"
-      TrackingMode	      off
-      Kt		      "1"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LockScale		      off
-      PParamMin		      "[]"
-      PParamMax		      "[]"
-      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      IParamMin		      "[]"
-      IParamMax		      "[]"
-      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      DParamMin		      "[]"
-      DParamMax		      "[]"
-      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      NParamMin		      "[]"
-      NParamMax		      "[]"
-      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbParamMin	      "[]"
-      KbParamMax	      "[]"
-      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
-      KtParamMin	      "[]"
-      KtParamMax	      "[]"
-      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
-      POutMin		      "[]"
-      POutMax		      "[]"
-      POutDataTypeStr	      "Inherit: Inherit via internal rule"
-      PGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      PProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IOutMin		      "[]"
-      IOutMax		      "[]"
-      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      IProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DOutMin		      "[]"
-      DOutMax		      "[]"
-      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      DGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      DProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NOutMin		      "[]"
-      NOutMax		      "[]"
-      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      NGainOutDataTypeStr     "Inherit: Inherit via internal rule"
-      NProdOutDataTypeStr     "Inherit: Inherit via internal rule"
-      KbOutMin		      "[]"
-      KbOutMax		      "[]"
-      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KtOutMin		      "[]"
-      KtOutMax		      "[]"
-      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IntegratorOutMin	      "[]"
-      IntegratorOutMax	      "[]"
-      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-      FilterOutMin	      "[]"
-      FilterOutMax	      "[]"
-      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
-      SumOutMin		      "[]"
-      SumOutMax		      "[]"
-      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SumI1OutMin	      "[]"
-      SumI1OutMax	      "[]"
-      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI2OutMin	      "[]"
-      SumI2OutMax	      "[]"
-      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI3OutMin	      "[]"
-      SumI3OutMax	      "[]"
-      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumDOutMin	      "[]"
-      SumDOutMax	      "[]"
-      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
-      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
-      SaturationOutMin	      "[]"
-      SaturationOutMax	      "[]"
-      SaturationOutDataTypeStr "Inherit: Same as input"
-      IntegratorContinuousStateAttributes "''"
-      IntegratorStateMustResolveToSignalObject off
-      IntegratorRTWStateStorageClass "Auto"
-      FilterContinuousStateAttributes "''"
-      FilterStateMustResolveToSignalObject off
-      FilterRTWStateStorageClass "Auto"
-      DifferentiatorICPrevScaledInput "0"
-      DifferentiatorOutMin    "[]"
-      DifferentiatorOutMax    "[]"
-      DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
-      InitialConditionSetting "State (most efficient)"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "P pos4"
-      SID		      "714"
-      Ports		      [5, 1]
-      Position		      [240, 557, 295, 633]
-      ZOrder		      13
-      LibraryVersion	      "1.391"
-      SourceBlock	      "simulink/Continuous/PID Controller"
-      SourceType	      "PID 1dof"
-      SourceProductName	      "Simulink"
-      SourceProductBaseCode   "SL"
-      ContentPreviewEnabled   off
-      Controller	      "PID"
-      TimeDomain	      "Discrete-time"
-      SampleTime	      "h"
-      IntegratorMethod	      "Forward Euler"
-      FilterMethod	      "Forward Euler"
-      Form		      "Parallel"
-      UseFilter		      on
-      ControllerParametersSource "external"
-      P			      "Kp_z"
-      I			      "Ki_z"
-      D			      "Kd_z"
-      N			      "100"
-      InitialConditionSource  "internal"
-      InitialConditionForIntegrator "0"
-      InitialConditionForFilter	"0"
-      ExternalReset	      "none"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      LimitOutput	      off
-      UpperSaturationLimit    "5"
-      LowerSaturationLimit    "-10"
       LinearizeAsGain	      off
       AntiWindupMode	      "none"
       Kb		      "1"
@@ -6391,6 +5905,848 @@ Model {
       AlgorithmType	      "Newton-Raphson"
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem"
+      SID		      "850"
+      Ports		      [4, 3]
+      Position		      [180, 350, 325, 600]
+      ZOrder		      55
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Subsystem"
+	Location		[-8, -8, 1928, 1048]
+	Open			off
+	PortBlocksUseCompactNotation off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"150"
+	Block {
+	  BlockType		  Inport
+	  Name			  "x_e"
+	  SID			  "854"
+	  Position		  [95, 15, 115, 45]
+	  ZOrder		  57
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_e"
+	  SID			  "855"
+	  Position		  [95, 118, 125, 132]
+	  ZOrder		  58
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "z_e"
+	  SID			  "859"
+	  Position		  [92, 223, 122, 237]
+	  ZOrder		  62
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Gains"
+	  SID			  "870"
+	  Position		  [-60, 213, -30, 227]
+	  ZOrder		  73
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  SID			  "848"
+	  Position		  [195, 445, 225, 475]
+	  ZOrder		  53
+	  Value			  "100"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "872"
+	  Ports			  [1, 12]
+	  Position		  [5, 2, 15, 478]
+	  ZOrder		  75
+	  ShowName		  off
+	  Outputs		  "12"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "P pos1"
+	  SID			  "588"
+	  Ports			  [5, 1]
+	  Position		  [260, 114, 330, 196]
+	  ZOrder		  -17
+	  LibraryVersion	  "1.391"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  ContentPreviewEnabled	  off
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "h"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  UseFilter		  on
+	  ControllerParametersSource "external"
+	  P			  "Kp_position"
+	  I			  "Ki_position"
+	  D			  "Kd_position"
+	  N			  "100"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "5"
+	  LowerSaturationLimit	  "-10"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	  DifferentiatorICPrevScaledInput "0"
+	  DifferentiatorOutMin	  "[]"
+	  DifferentiatorOutMax	  "[]"
+	  DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  InitialConditionSetting "State (most efficient)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "P pos2"
+	  SID			  "189"
+	  Ports			  [5, 1]
+	  Position		  [260, 24, 330, 96]
+	  ZOrder		  -18
+	  LibraryVersion	  "1.391"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  ContentPreviewEnabled	  off
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "h"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  UseFilter		  on
+	  ControllerParametersSource "external"
+	  P			  "Kp_position"
+	  I			  "Ki_position"
+	  D			  "Kd_position"
+	  N			  "100"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "5"
+	  LowerSaturationLimit	  "-10"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	  DifferentiatorICPrevScaledInput "0"
+	  DifferentiatorOutMin	  "[]"
+	  DifferentiatorOutMax	  "[]"
+	  DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  InitialConditionSetting "State (most efficient)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "P pos3"
+	  SID			  "589"
+	  Ports			  [5, 1]
+	  Position		  [260, 217, 325, 303]
+	  ZOrder		  -19
+	  LibraryVersion	  "1.391"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  ContentPreviewEnabled	  off
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "h"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  UseFilter		  on
+	  ControllerParametersSource "external"
+	  P			  "Kp_position"
+	  I			  "Ki_position"
+	  D			  "Kd_position"
+	  N			  "100"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "5"
+	  LowerSaturationLimit	  "-10"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	  DifferentiatorICPrevScaledInput "0"
+	  DifferentiatorOutMin	  "[]"
+	  DifferentiatorOutMax	  "[]"
+	  DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  InitialConditionSetting "State (most efficient)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "P pos4"
+	  SID			  "714"
+	  Ports			  [5, 1]
+	  Position		  [260, 334, 325, 416]
+	  ZOrder		  13
+	  LibraryVersion	  "1.391"
+	  SourceBlock		  "simulink/Continuous/PID Controller"
+	  SourceType		  "PID 1dof"
+	  SourceProductName	  "Simulink"
+	  SourceProductBaseCode	  "SL"
+	  ContentPreviewEnabled	  off
+	  Controller		  "PID"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "h"
+	  IntegratorMethod	  "Forward Euler"
+	  FilterMethod		  "Forward Euler"
+	  Form			  "Parallel"
+	  UseFilter		  on
+	  ControllerParametersSource "external"
+	  P			  "Kp_z"
+	  I			  "Ki_z"
+	  D			  "Kd_z"
+	  N			  "100"
+	  InitialConditionSource  "internal"
+	  InitialConditionForIntegrator	"0"
+	  InitialConditionForFilter "0"
+	  ExternalReset		  "none"
+	  IgnoreLimit		  off
+	  ZeroCross		  on
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "5"
+	  LowerSaturationLimit	  "-10"
+	  LinearizeAsGain	  off
+	  AntiWindupMode	  "none"
+	  Kb			  "1"
+	  TrackingMode		  off
+	  Kt			  "1"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  LockScale		  off
+	  PParamMin		  "[]"
+	  PParamMax		  "[]"
+	  PParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IParamMin		  "[]"
+	  IParamMax		  "[]"
+	  IParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DParamMin		  "[]"
+	  DParamMax		  "[]"
+	  DParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NParamMin		  "[]"
+	  NParamMax		  "[]"
+	  NParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbParamMin		  "[]"
+	  KbParamMax		  "[]"
+	  KbParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtParamMin		  "[]"
+	  KtParamMax		  "[]"
+	  KtParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  POutMin		  "[]"
+	  POutMax		  "[]"
+	  POutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  PProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IOutMin		  "[]"
+	  IOutMax		  "[]"
+	  IOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DOutMin		  "[]"
+	  DOutMax		  "[]"
+	  DOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  DProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NOutMin		  "[]"
+	  NOutMax		  "[]"
+	  NOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NGainOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  NProdOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KbOutMin		  "[]"
+	  KbOutMax		  "[]"
+	  KbOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  KtOutMin		  "[]"
+	  KtOutMax		  "[]"
+	  KtOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  IntegratorOutMin	  "[]"
+	  IntegratorOutMax	  "[]"
+	  IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  FilterOutMin		  "[]"
+	  FilterOutMax		  "[]"
+	  FilterOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumOutMin		  "[]"
+	  SumOutMax		  "[]"
+	  SumOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1OutMin		  "[]"
+	  SumI1OutMax		  "[]"
+	  SumI1OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2OutMin		  "[]"
+	  SumI2OutMax		  "[]"
+	  SumI2OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3OutMin		  "[]"
+	  SumI3OutMax		  "[]"
+	  SumI3OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDOutMin		  "[]"
+	  SumDOutMax		  "[]"
+	  SumDOutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI1AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI2AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumI3AccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SumDAccumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturationOutMin	  "[]"
+	  SaturationOutMax	  "[]"
+	  SaturationOutDataTypeStr "Inherit: Same as input"
+	  IntegratorContinuousStateAttributes "''"
+	  IntegratorStateMustResolveToSignalObject off
+	  IntegratorRTWStateStorageClass "Auto"
+	  FilterContinuousStateAttributes "''"
+	  FilterStateMustResolveToSignalObject off
+	  FilterRTWStateStorageClass "Auto"
+	  DifferentiatorICPrevScaledInput "0"
+	  DifferentiatorOutMin	  "[]"
+	  DifferentiatorOutMax	  "[]"
+	  DifferentiatorOutDataTypeStr "Inherit: Inherit via internal rule"
+	  InitialConditionSetting "State (most efficient)"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  "715"
+	  Position		  [420, 290, 470, 330]
+	  ZOrder		  14
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "867"
+	  Position		  [532, 53, 562, 67]
+	  ZOrder		  70
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  SID			  "868"
+	  Position		  [540, 148, 570, 162]
+	  ZOrder		  71
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  SID			  "869"
+	  Position		  [540, 303, 570, 317]
+	  ZOrder		  72
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1561
+	  SrcBlock		  "P pos2"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1562
+	  SrcBlock		  "P pos1"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  564
+	  SrcBlock		  "P pos3"
+	  SrcPort		  1
+	  Points		  [43, 0; 0, 35]
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  565
+	  SrcBlock		  "P pos4"
+	  SrcPort		  1
+	  Points		  [27, 0; 0, -50]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1563
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "Out3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1526
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  Points		  [3, 0; 0, -55]
+	  Branch {
+	    ZOrder		    1567
+	    Points		    [0, -115]
+	    Branch {
+	      ZOrder		      1530
+	      DstBlock		      "P pos3"
+	      DstPort		      5
+	    }
+	    Branch {
+	      ZOrder		      1529
+	      Points		      [0, -105]
+	      Branch {
+		ZOrder			1528
+		DstBlock		"P pos1"
+		DstPort			5
+	      }
+	      Branch {
+		ZOrder			1527
+		Points			[0, -95]
+		DstBlock		"P pos2"
+		DstPort			5
+	      }
+	    }
+	  }
+	  Branch {
+	    ZOrder		    1532
+	    DstBlock		    "P pos4"
+	    DstPort		    5
+	  }
+	}
+	Line {
+	  ZOrder		  1553
+	  SrcBlock		  "z_e"
+	  SrcPort		  1
+	  Points		  [19, 0]
+	  Branch {
+	    ZOrder		    1578
+	    Points		    [0, 88]
+	    Branch {
+	      ZOrder		      1580
+	      Points		      [243, 0; 0, -8]
+	      DstBlock		      "Switch1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      ZOrder		      1579
+	      Points		      [0, 27]
+	      DstBlock		      "P pos4"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    1577
+	    DstBlock		    "P pos3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  1549
+	  SrcBlock		  "y_e"
+	  SrcPort		  1
+	  DstBlock		  "P pos1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1548
+	  SrcBlock		  "x_e"
+	  SrcPort		  1
+	  DstBlock		  "P pos2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1589
+	  SrcBlock		  "Gains"
+	  SrcPort		  1
+	  Points		  [12, 0; 0, 20]
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1590
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -15; 133, 0; 0, 40]
+	  DstBlock		  "P pos2"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  1591
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [37, 0; 0, 11; 154, 0; 0, -11]
+	  DstBlock		  "P pos2"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1592
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [104, 0; 0, -25]
+	  DstBlock		  "P pos2"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  1593
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [40, 0; 0, 18; 162, 0; 0, -18]
+	  DstBlock		  "P pos1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  1594
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  Points		  [208, 0; 0, -25]
+	  DstBlock		  "P pos1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1595
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  Points		  [34, 0; 0, -50]
+	  DstBlock		  "P pos1"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  1596
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  Points		  [170, 0; 0, -15]
+	  DstBlock		  "P pos3"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  1597
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  Points		  [192, 0; 0, -40]
+	  DstBlock		  "P pos3"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1598
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  Points		  [61, 0; 0, -65]
+	  DstBlock		  "P pos3"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  1599
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  Points		  [61, 0; 0, -20]
+	  DstBlock		  "P pos4"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  1600
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  Points		  [28, 0; 0, -45]
+	  DstBlock		  "P pos4"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1601
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  Points		  [118, 0; 0, -70]
+	  DstBlock		  "P pos4"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "126"
@@ -6579,16 +6935,6 @@ Model {
       Position		      [1455, 280, 1505, 320]
       ZOrder		      5
       Criteria		      "u2 ~= 0"
-      InputSameDT	      off
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Switch
-      Name		      "Switch1"
-      SID		      "715"
-      Position		      [350, 490, 400, 530]
-      ZOrder		      14
-      Criteria		      "u2 > Threshold"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
     }
@@ -8162,7 +8508,7 @@ Model {
       SID		      "764"
       Position		      [-850, 855, -820, 885]
       ZOrder		      29
-      Value		      "0"
+      Value		      "10"
     }
     Block {
       BlockType		      Constant
@@ -8226,37 +8572,18 @@ Model {
       ZOrder		      7
       SrcBlock		      "Sum4"
       SrcPort		      1
-      Points		      [0, 40; 54, 0]
+      Points		      [0, 40; 54, 0; 0, -15; 38, 0]
       Branch {
-	ZOrder			1088
-	Points			[0, 28]
-	Branch {
-	  ZOrder		  563
-	  Points		  [0, 27]
-	  DstBlock		  "P pos4"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  562
-	  Points		  [301, 0; 0, -28]
-	  DstBlock		  "Switch1"
-	  DstPort		  2
-	}
+	ZOrder			1584
+	Points			[0, 10]
+	DstBlock		"Subsystem"
+	DstPort			3
       }
       Branch {
-	ZOrder			559
-	Points			[0, -15; 38, 0]
-	Branch {
-	  ZOrder		  557
-	  Points		  [0, -305]
-	  DstBlock		  "eta1"
-	  DstPort		  3
-	}
-	Branch {
-	  ZOrder		  553
-	  DstBlock		  "P pos3"
-	  DstPort		  1
-	}
+	ZOrder			1580
+	Points			[0, -305]
+	DstBlock		"eta1"
+	DstPort			3
       }
     }
     Line {
@@ -8300,14 +8627,15 @@ Model {
       SrcPort		      1
       Points		      [0, 25; 155, 0]
       Branch {
-	ZOrder			418
-	DstBlock		"P pos1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			416
+	ZOrder			1586
 	Points			[0, -265]
 	DstBlock		"eta1"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1546
+	Points			[0, 15]
+	DstBlock		"Subsystem"
 	DstPort			2
       }
     }
@@ -8335,15 +8663,15 @@ Model {
       SrcPort		      1
       Points		      [0, 10; 206, 0]
       Branch {
-	ZOrder			1519
-	Points			[5, 0; 0, -210]
-	DstBlock		"eta1"
+	ZOrder			1545
+	Points			[0, 35]
+	DstBlock		"Subsystem"
 	DstPort			1
       }
       Branch {
-	ZOrder			421
-	Points			[0, -30]
-	DstBlock		"P pos2"
+	ZOrder			1519
+	Points			[5, 0; 0, -210]
+	DstBlock		"eta1"
 	DstPort			1
       }
     }
@@ -8361,40 +8689,6 @@ Model {
 	ZOrder			768
 	Points			[0, -175]
 	DstBlock		"To Workspace"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      27
-      SrcBlock		      "P pos2"
-      SrcPort		      1
-      Points		      [182, 0]
-      Branch {
-	ZOrder			263
-	Points			[0, -125]
-	DstBlock		"eta3"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			262
-	DstBlock		"Saturation"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      28
-      SrcBlock		      "P pos1"
-      SrcPort		      1
-      Points		      [220, 0]
-      Branch {
-	ZOrder			265
-	Points			[0, -180]
-	DstBlock		"eta3"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			264
-	DstBlock		"Saturation1"
 	DstPort			1
       }
     }
@@ -8973,7 +9267,7 @@ Model {
       ZOrder		      926
       SrcBlock		      "Triggered\nSubsystem"
       SrcPort		      4
-      Points		      [154, 0; 0, -75; 724, 0; 0, 80]
+      Points		      [154, 0; 0, 170; 678, 0; 0, -165]
       DstBlock		      "Euler conv"
       DstPort		      4
     }
@@ -9076,32 +9370,10 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      564
-      SrcBlock		      "P pos3"
-      SrcPort		      1
-      DstBlock		      "Switch1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      565
-      SrcBlock		      "P pos4"
-      SrcPort		      1
-      Points		      [29, 0; 0, -70]
-      DstBlock		      "Switch1"
-      DstPort		      3
-    }
-    Line {
-      ZOrder		      566
-      SrcBlock		      "Switch1"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      725
       SrcBlock		      "Mode Selector"
       SrcPort		      3
-      Points		      [77, 0; 0, -195]
+      Points		      [77, 0; 0, -155]
       Branch {
 	ZOrder			917
 	Points			[21, 0]
@@ -9304,7 +9576,7 @@ Model {
       ZOrder		      953
       SrcBlock		      "Mode Selector"
       SrcPort		      2
-      Points		      [9, 0; 0, -175]
+      Points		      [9, 0; 0, -150]
       DstBlock		      "Memory1"
       DstPort		      1
     }
@@ -9320,7 +9592,7 @@ Model {
       ZOrder		      1086
       SrcBlock		      "Mode Selector"
       SrcPort		      1
-      Points		      [23, 0; 0, -155]
+      Points		      [23, 0; 0, -145]
       DstBlock		      "Memory2"
       DstPort		      1
     }
@@ -9382,6 +9654,58 @@ Model {
       DstBlock		      "Quadrotor_Dynamics"
       DstPort		      6
     }
+    Line {
+      ZOrder		      1549
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [47, 0; 0, -80; 120, 0]
+      Branch {
+	ZOrder			1520
+	Points			[0, 40]
+	DstBlock		"Saturation"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			263
+	Points			[0, -85]
+	DstBlock		"eta3"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      1550
+      SrcBlock		      "Subsystem"
+      SrcPort		      2
+      Points		      [54, 0; 0, -70; 121, 0]
+      Branch {
+	ZOrder			1524
+	Points			[0, 25]
+	DstBlock		"Saturation1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1523
+	Points			[0, -155]
+	DstBlock		"eta3"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      1551
+      SrcBlock		      "Subsystem"
+      SrcPort		      3
+      Points		      [114, 0; 0, -50]
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1587
+      SrcBlock		      "Mode Selector"
+      SrcPort		      4
+      Points		      [28, 0; 0, 36; 479, 0; 0, -96]
+      DstBlock		      "Subsystem"
+      DstPort		      4
+    }
     Annotation {
       SID		      "768"
       Name		      "Target Controls"
@@ -9395,7 +9719,7 @@ Model {
       BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
       DropShadow	      on
       AnnotationType	      "area_annotation"
-      ZOrder		      120
+      ZOrder		      141
       FontSize		      12
     }
     Annotation {
@@ -9428,7 +9752,7 @@ Stateflow {
     created		    "11-Dec-2011 22:34:12"
     isLibrary		    0
     sfVersion		    80000011
-    firstTarget		    92
+    firstTarget		    93
   }
   chart {
     id			    2
@@ -10559,7 +10883,7 @@ Stateflow {
     visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    16
+    ssIdHighWaterMark	    17
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    6
@@ -10568,8 +10892,8 @@ Stateflow {
       name		      "modeSelector"
     }
     firstData		    58
-    firstTransition	    71
-    firstJunction	    70
+    firstTransition	    72
+    firstJunction	    71
   }
   state {
     id			    57
@@ -10585,18 +10909,21 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [pland,count,mode] = modeSelector(curr_pland,curr_mode,curr_count,mission,x,y,z,x_t,y_t)"
-      "\n% Modes\n%   Mission (1) - drone is going to location (no need to follow truck)\n%   Rendezvous (2) - drone is"
-      " trying to match truck's location (should\n%   result in drone hovering 0.2m above the truck\n%   Landing (3) - "
-      "drone is trying the land on truck (go down the last 0.2m)\n%   Landed (4) - drone simply follows the position of"
-      " the truck (based on\n%   where it landed)\n\npland = curr_pland;\ncount = 0;\ncount_min = 50;\n\nmode = curr_mo"
-      "de;\n\ntotal_error = 0;\n\nswitch curr_mode\n    case 1 % Mission\n        if ~mission\n            mode = 2; % "
-      "No longer in mission mode so go to rendezvous\n        end\n    case 2 % Rendezvous\n        x_error = x - x_t;\n"
-      "        y_error = y - y_t;\n        z_error = z - 1;\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_er"
-      "ror.^2));\n        \n        if total_error < 1.6\n            count = curr_count + 1;\n            if count > c"
-      "ount_min\n                mode = 3; % Close enough to land\n            end\n        end\n    case 3 % Landing\n"
-      "        if z <= 1\n            mode = 4;\n            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n    "
-      "    end\nend\n\nend\n"
+      script		      "function [pland,count,mode,PID_k] = modeSelector(curr_pland,curr_mode,curr_count,mission,x,y,z,x_"
+      "t,y_t)\n% Modes\n%   Mission (1) - drone is going to location (no need to follow truck)\n%   Rendezvous (2) - dr"
+      "one is trying to match truck's location (should\n%   result in drone hovering 0.2m above the truck\n%   Landing "
+      "(3) - drone is trying the land on truck (go down the last 0.2m)\n%   Landed (4) - drone simply follows the posit"
+      "ion of the truck (based on\n%   where it landed)\n\npland = curr_pland;\ncount = 0;\ncount_min = 50;\n\nmode = c"
+      "urr_mode;\n\ntotal_error = 0;\n\nKp_xy = 0.2; \nKi_xy = 0;\nKd_xy = 0.8;\nKp_z = 0.2;\nKi_z = 0;\nKd_z = 0.8;\nK"
+      "p_z_neg = 0.2;\nKi_z_neg = 0;\nKd_z_neg = 0.8;\n\nswitch curr_mode\n    case 1 % Mission\n        if ~mission\n "
+      "           mode = 2; % No longer in mission mode so go to rendezvous\n        end\n    case 2 % Rendezvous\n    "
+      "    Kp_z_neg = 0.2;\n        Ki_z_neg = 0;\n        Kd_z_neg = 3;\n        \n        x_error = x - x_t;\n       "
+      " y_error = y - y_t;\n        z_error = z - 1;\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_error.^2)"
+      ");\n        \n        if total_error < 1.6\n            count = curr_count + 1;\n            if count > count_mi"
+      "n\n                mode = 3; % Close enough to land\n            end\n        end\n    case 3 % Landing\n       "
+      " if z <= 1\n            mode = 4;\n            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n        end"
+      "\nend\n\nPID_k = [Kp_xy, Ki_xy, Kd_xy, Kp_xy, Ki_xy, Kd_xy, Kp_z, Ki_z, Kd_z, Kp_z_neg, Ki_z_neg, Kd_z_neg]';\n\n"
+      "end\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -10893,10 +11220,35 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [56 68 0]
+    linkNode		    [56 68 70]
+  }
+  data {
+    id			    70
+    ssIdNumber		    17
+    name		    "PID_k"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [56 69 0]
   }
   junction {
-    id			    70
+    id			    71
     position		    [23.5747 49.5747 7]
     chart		    56
     subviewer		    56
@@ -10905,7 +11257,7 @@ Stateflow {
     linkNode		    [56 0 0]
   }
   transition {
-    id			    71
+    id			    72
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -10913,7 +11265,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      70
+      id		      71
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -10929,20 +11281,20 @@ Stateflow {
     linkNode		    [56 0 0]
   }
   instance {
-    id			    72
+    id			    73
     machine		    1
     name		    "Mode Selector"
     chart		    56
   }
   chart {
-    id			    73
+    id			    74
     machine		    1
     name		    "Mission Planner"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 74 0 0]
-    viewObj		    73
+    treeNode		    [0 75 0 0]
+    viewObj		    74
     visible		    1
     subviewS {
     }
@@ -10954,19 +11306,19 @@ Stateflow {
     eml {
       name		      "missionPlanner"
     }
-    firstData		    75
-    firstTransition	    79
-    firstJunction	    78
+    firstData		    76
+    firstTransition	    80
+    firstJunction	    79
   }
   state {
-    id			    74
+    id			    75
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    73
-    treeNode		    [73 0 0 0]
+    chart		    74
+    treeNode		    [74 0 0 0]
     superState		    SUBCHART
-    subviewer		    73
+    subviewer		    74
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -10978,7 +11330,7 @@ Stateflow {
     }
   }
   data {
-    id			    75
+    id			    76
     ssIdNumber		    4
     name		    "t"
     scope		    INPUT_DATA
@@ -10997,10 +11349,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [73 0 76]
+    linkNode		    [74 0 77]
   }
   data {
-    id			    76
+    id			    77
     ssIdNumber		    5
     name		    "mission"
     scope		    OUTPUT_DATA
@@ -11020,10 +11372,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [73 75 77]
+    linkNode		    [74 76 78]
   }
   data {
-    id			    77
+    id			    78
     ssIdNumber		    6
     name		    "pos_d"
     scope		    OUTPUT_DATA
@@ -11045,19 +11397,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [73 76 0]
+    linkNode		    [74 77 0]
   }
   junction {
-    id			    78
+    id			    79
     position		    [23.5747 49.5747 7]
-    chart		    73
-    subviewer		    73
+    chart		    74
+    subviewer		    74
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [73 0 0]
+    linkNode		    [74 0 0]
   }
   transition {
-    id			    79
+    id			    80
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -11065,36 +11417,36 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      78
+      id		      79
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    73
+    chart		    74
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    73
+    subviewer		    74
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [73 0 0]
+    linkNode		    [74 0 0]
   }
   instance {
-    id			    80
+    id			    81
     machine		    1
     name		    "Mission Planner"
-    chart		    73
+    chart		    74
   }
   chart {
-    id			    81
+    id			    82
     machine		    1
     name		    "Target Dynamics"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 82 0 0]
-    viewObj		    81
+    treeNode		    [0 83 0 0]
+    viewObj		    82
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -11103,19 +11455,19 @@ Stateflow {
     eml {
       name		      "targetDynamics"
     }
-    firstData		    83
-    firstTransition	    90
-    firstJunction	    89
+    firstData		    84
+    firstTransition	    91
+    firstJunction	    90
   }
   state {
-    id			    82
+    id			    83
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    81
-    treeNode		    [81 0 0 0]
+    chart		    82
+    treeNode		    [82 0 0 0]
     superState		    SUBCHART
-    subviewer		    81
+    subviewer		    82
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -11127,7 +11479,7 @@ Stateflow {
     }
   }
   data {
-    id			    83
+    id			    84
     ssIdNumber		    7
     name		    "vx"
     scope		    INPUT_DATA
@@ -11149,10 +11501,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 0 84]
+    linkNode		    [82 0 85]
   }
   data {
-    id			    84
+    id			    85
     ssIdNumber		    8
     name		    "vy"
     scope		    INPUT_DATA
@@ -11174,10 +11526,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 83 85]
+    linkNode		    [82 84 86]
   }
   data {
-    id			    85
+    id			    86
     ssIdNumber		    5
     name		    "x_t"
     scope		    OUTPUT_DATA
@@ -11197,10 +11549,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 84 86]
+    linkNode		    [82 85 87]
   }
   data {
-    id			    86
+    id			    87
     ssIdNumber		    9
     name		    "y_t"
     scope		    OUTPUT_DATA
@@ -11222,10 +11574,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 85 87]
+    linkNode		    [82 86 88]
   }
   data {
-    id			    87
+    id			    88
     ssIdNumber		    4
     name		    "xin"
     scope		    INPUT_DATA
@@ -11244,10 +11596,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 86 88]
+    linkNode		    [82 87 89]
   }
   data {
-    id			    88
+    id			    89
     ssIdNumber		    6
     name		    "yin"
     scope		    INPUT_DATA
@@ -11269,19 +11621,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [81 87 0]
+    linkNode		    [82 88 0]
   }
   junction {
-    id			    89
+    id			    90
     position		    [23.5747 49.5747 7]
-    chart		    81
-    subviewer		    81
+    chart		    82
+    subviewer		    82
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [81 0 0]
+    linkNode		    [82 0 0]
   }
   transition {
-    id			    90
+    id			    91
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -11289,29 +11641,29 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      89
+      id		      90
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    81
+    chart		    82
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    81
+    subviewer		    82
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [81 0 0]
+    linkNode		    [82 0 0]
   }
   instance {
-    id			    91
+    id			    92
     machine		    1
     name		    "Target Dynamics"
-    chart		    81
+    chart		    82
   }
   target {
-    id			    92
+    id			    93
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
