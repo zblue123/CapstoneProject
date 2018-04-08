@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.949"
+    ComputedModelVersion    "1.987"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -114,9 +114,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "sydney.m.katz"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 04 21:25:27 2018"
-  RTWModifiedTimeStamp	  444777924
-  ModelVersionFormat	  "1.%<AutoIncrement:949>"
+  LastModifiedDate	  "Sun Apr 08 14:01:08 2018"
+  RTWModifiedTimeStamp	  445096865
+  ModelVersionFormat	  "1.%<AutoIncrement:987>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -5950,7 +5950,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "z_e"
 	  SID			  "859"
-	  Position		  [92, 223, 122, 237]
+	  Position		  [90, 223, 120, 237]
 	  ZOrder		  62
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -6505,7 +6505,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Out1"
 	  SID			  "867"
-	  Position		  [532, 53, 562, 67]
+	  Position		  [530, 53, 560, 67]
 	  ZOrder		  70
 	  IconDisplay		  "Port number"
 	}
@@ -10216,9 +10216,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 25 0 0]
     viewObj		    24
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10920,13 +10917,14 @@ Stateflow {
       "urr_mode;\n\ntotal_error = 0;\n\nKp_xy = 0.2; \nKi_xy = 0;\nKd_xy = 0.8;\nKp_z = 0.2;\nKi_z = 0;\nKd_z = 0.8;\nK"
       "p_z_neg = 0.2;\nKi_z_neg = 0;\nKd_z_neg = 0.8;\n\nswitch curr_mode\n    case 1 % Mission\n        if ~mission\n "
       "           mode = 2; % No longer in mission mode so go to rendezvous\n        end\n    case 2 % Rendezvous\n    "
-      "    Kp_z = 2.5;\n        Ki_z = 0;\n        Kd_z = 5;\n        \n        Kp_z_neg = 0.2;\n        Ki_z_neg = 0;\n"
-      "        Kd_z_neg = 3;\n        \n        x_error = x - x_t;\n        y_error = y - y_t;\n        z_error = z - 1"
-      ";\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_error.^2));\n        \n        if total_error < 16 &&"
-      " z > 10\n            count = curr_count + 1;\n            if count > count_min\n                mode = 3; % Clos"
-      "e enough to land\n            end\n        end\n    case 3 % Landing\n        if z <= 1\n            mode = 4;\n"
-      "            pland(1) = x - x_t;\n            pland(2) = y - y_t;\n        end\nend\n\nPID_k = [Kp_xy, Ki_xy, Kd_"
-      "xy, Kp_xy, Ki_xy, Kd_xy, Kp_z, Ki_z, Kd_z, Kp_z_neg, Ki_z_neg, Kd_z_neg]';\n\nend\n"
+      "    Kp_z = 4;\n        Ki_z = 0;\n        Kd_z = 8;\n        \n        Kp_z_neg = 0.2;\n        Ki_z_neg = 0;\n "
+      "       Kd_z_neg = 3;\n        \n        x_error = x - x_t;\n        y_error = y - y_t;\n        z_error = z - 1;"
+      "\n        total_error = sqrt((x_error.^2)+(y_error.^2)+(z_error.^2));\n        \n        if total_error < 16 && "
+      "z > 10\n            count = curr_count + 1;\n            if count > count_min\n                mode = 3; % Close"
+      " enough to land\n            end\n        end\n    case 3 % Landing\n        Kp_z_neg = 0.2;\n        Ki_z_neg ="
+      " 0;\n        Kd_z_neg = 0.82;\n        \n        if z <= 1\n            mode = 4;\n            pland(1) = x - x_"
+      "t;\n            pland(2) = y - y_t;\n        end\nend\n\nPID_k = [Kp_xy, Ki_xy, Kd_xy, Kp_xy, Ki_xy, Kd_xy, Kp_z"
+      ", Ki_z, Kd_z, Kp_z_neg, Ki_z_neg, Kd_z_neg]';\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -11298,9 +11296,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 75 0 0]
     viewObj		    74
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
