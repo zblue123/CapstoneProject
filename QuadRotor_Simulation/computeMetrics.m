@@ -62,5 +62,5 @@ cosAngle = dot(drone_vector,z_vector)/(norm(z_vector)*norm(drone_vector));
 angle_land = acosd(cosAngle); 
  
 mass = 25;
-force_land = ddzdtdt(find(mode==4,1)-1) * mass;
+force_land = (abs(vel_land)/dt)*mass; %ddzdtdt(find(mode==4,1)-1) * mass;
 end

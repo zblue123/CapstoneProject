@@ -1,6 +1,6 @@
 clear all
 close all
-m = 1; % 25
+m = 25; %1; % 25
 Ixx = 0.7625; %8.1e-3; % 0.7625
 Iyy = 0.7625; %8.1e-3; % 0.7625
 Izz = 1.2183; %14.2e-3; % 1.2183
@@ -83,4 +83,8 @@ Cd_a = tf(sys_d_actrl);
 % SMK Added
 set_param('Quadrotor','AlgebraicLoopSolver','LineSearch');
 dt = 0.01;
-
+msl = 200;
+vx = 10;
+vy = 0;
+x0 = 50;
+y0 = 10;
