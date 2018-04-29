@@ -1,4 +1,4 @@
-function [t_ren,t_land,error_land,vel_land,force_land,angle_land] = computeMetrics(t,x,y,z,phi,theta,psi,off,x_t,y_t,z_t,mode)
+function [t_ren,t_land,error_land,vel_land,force_land,angle_land,x_land,y_land] = computeMetrics(t,x,y,z,phi,theta,psi,off,x_t,y_t,z_t,mode,xland,yland)
  
 tolerance = 0.1; % Considered to have "rendezvoused" when within this tolerance of target
 dt = t(2) - t(1);
@@ -63,4 +63,8 @@ angle_land = acosd(cosAngle);
  
 mass = 25;
 force_land = (abs(vel_land)/dt)*mass; %ddzdtdt(find(mode==4,1)-1) * mass;
+
+x_land = xland(find(mode==4,1));
+y_land = yland(find(mode==4,1));
+
 end
